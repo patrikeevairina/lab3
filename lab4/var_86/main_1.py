@@ -63,9 +63,6 @@ def crit_t(sel_1, sel_2):
 
 
 # задание 4.1
-print("Выборка 1: ", first)
-print("Выборка 2: ", second)
-print("Выборка 3: ", third)
 print("столбцы      x       y       x**2      y**2      S**2_x      S**2_y     T_nn")
 print("(1,2) ", sample_average(first), " ", sample_average(second), " ", unbiased_variance(first), " ", unbiased_variance(second), " ", s2(first), " ", s2(second), " ", crit_t(first, second))
 print("(1,3) ", sample_average(first), " ", sample_average(third), " ", unbiased_variance(first), " ", unbiased_variance(third), " ", s2(first), " ", s2(third), " ", crit_t(first, third))
@@ -93,7 +90,7 @@ if crit_t(second, third) <= critical_value:
 else:
     result_2_3 = " Неверна"
 
-print("столбцы    |T_nn|    t_кр_а    Вывод")
+print("\nстолбцы    |T_nn|    t_кр_а    Вывод")
 print("(1,2)    ", abs(crit_t(first, second)), " ", critical_value, result_1_2)
 print("(1,3)    ", abs(crit_t(first, third)), " ", critical_value, result_1_3)
 print("(2,3)    ", abs(crit_t(second, third)), " ", critical_value, result_2_3)
