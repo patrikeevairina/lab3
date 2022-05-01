@@ -27,11 +27,10 @@ alpha = 0.05
 
 pval = round(scipy.stats.f_oneway(first, second, third).pvalue, 5)
 
-if pval <= alpha:
+if pval > alpha:
     result = "   Верна"
 else:
     result = "   Неверна"
-
 
 print("pval      alpha    Вывод")
 print(pval, " ", alpha, result)

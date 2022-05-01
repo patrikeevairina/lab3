@@ -27,10 +27,10 @@ alpha = 0.05
 
 pval = round(scipy.stats.bartlett(first, second, third).pvalue, 5)
 
-if pval <= alpha:
-    result = "   Верна"
+if pval < alpha:
+    result = "   неверна"
 else:
-    result = "   Неверна"
+    result = "   верна"
 
 
 print("pval      alpha    Вывод")

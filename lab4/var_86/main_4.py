@@ -29,22 +29,23 @@ pval_13 = round(scipy.stats.ttest_ind(first, third, equal_var=False).pvalue, 5)
 pval_23 = round(scipy.stats.ttest_ind(second, third, equal_var=False).pvalue, 5)
 
 # проверка выборок 1 и 2
-if pval_12 <= alpha:
+if pval_12 >= alpha:
     result_1_2 = "   Верна"
 else:
     result_1_2 = "   Неверна"
 
 # проверка выборок 1 и 3
-if pval_13 <= alpha:
+if pval_13 >= alpha:
     result_1_3 = "   Верна"
 else:
     result_1_3 = "   Неверна"
 
 # проверка выборок 2 и 3
-if pval_23 <= alpha:
+if pval_23 >= alpha:
     result_2_3 = "   Верна"
 else:
     result_2_3 = "   Неверна"
+
 
 print("столбцы    pval   alpha    Вывод")
 print("(1,2)    ", pval_12, " ", alpha, result_1_2)

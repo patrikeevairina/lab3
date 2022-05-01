@@ -72,7 +72,7 @@ def crit_f(sel):
     f = []
     f.append(round(fact_sum_sq_dev(sel) / (m - 1), 5))
     f.append(round(residual_sum_sq_dev(sel) / (m * (N - 1)), 5))
-    f.append(round(f[-1] / f[-2], 5))
+    f.append(round(f[-2] / f[-1], 5))
     return f
 
 # задание 4.2
