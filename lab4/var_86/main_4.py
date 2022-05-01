@@ -24,9 +24,9 @@ third = [1.62073, 6.44220, 6.21874, 11.27553, 9.41593, 12.11049,
 sel_2d = [first, second, third]
 
 alpha = 0.05
-pval_12 = round(scipy.stats.ttest_ind(first, second, equal_var=True).pvalue, 5)
-pval_13 = round(scipy.stats.ttest_ind(first, third, equal_var=True).pvalue, 5)
-pval_23 = round(scipy.stats.ttest_ind(second, third, equal_var=True).pvalue, 5)
+pval_12 = round(scipy.stats.ttest_ind(first, second, equal_var=False).pvalue, 5)
+pval_13 = round(scipy.stats.ttest_ind(first, third, equal_var=False).pvalue, 5)
+pval_23 = round(scipy.stats.ttest_ind(second, third, equal_var=False).pvalue, 5)
 
 # проверка выборок 1 и 2
 if pval_12 <= alpha:
