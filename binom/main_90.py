@@ -109,8 +109,8 @@ for i in range(len(x)):
     Npw2p[i] = round((num * (teor_p_i[i] - w[i]) ** 2) / teor_p_i[i], 5)
 print("N(p*-w)^2:p*", Npw2p, "sum", round(sum(Npw2p), 5))
 
-# Число интервалов по формуле Стерджеса
-m = 1 + int(math.log2(num))
+# Число интервалов
+m = len(n)
 
 # Шаг
 h = (selection[199] - selection[0]) / m
