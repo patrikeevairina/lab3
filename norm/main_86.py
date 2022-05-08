@@ -15,6 +15,7 @@ def hystogram(sel, a, dens):
     fig, ax = plt.subplots()
     ax.hist(sel, bins=a, density=True, color="White", edgecolor="Black", linewidth=0.5)
     ax.plot(sel, dens, 'r', linewidth=1.0)
+
     plt.show()
 
 
@@ -95,6 +96,7 @@ print("мат ожидание", math_exp)
 
 # dispersion
 sigma_2 = round(sum([w[i] * (x_star[i] ** 2) for i in range(m)]), 5)
+sigma_2 = sigma_2 - math_exp**2
 print("дисперсия", sigma_2)
 
 # вся фигня для таблицы 3.2
@@ -127,7 +129,8 @@ print("p*", p_star, "sum p*", sum(p_star))
 # гистограмма и функция
 density = []
 for i in selection:
-    density.append(round(pow(math.e, (-1) * pow((i-math_exp)/sigma, 2) / 2) / (sigma * pow(2 * math.pi, 0.5)), 5))
+    density.append(round(pow(math.e, (-0.5) * pow((i-math_exp)/sigma, 2)) / (sigma * pow(2 * math.pi, 0.5)), 5))
+print(sum(density))
 hystogram(selection, a, density)
 
 # таблица 3.3

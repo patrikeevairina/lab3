@@ -95,10 +95,12 @@ print("мат ожидание", math_exp)
 
 # dispersion
 sigma_2 = round(sum([w[i] * (x_star[i] ** 2) for i in range(m)]), 5)
+sigma_2 = sigma_2 - math_exp**2
 print("дисперсия", sigma_2)
 
 # вся фигня для таблицы 3.2
 sigma = round(sigma_2 ** 0.5, 5)
+
 print("sigma", sigma)
 
 t = []
